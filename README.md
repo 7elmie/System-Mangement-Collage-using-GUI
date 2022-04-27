@@ -1,4 +1,3 @@
-# University Management System
 
 <h2 align="center">Send text to my social platform.</h2>
 
