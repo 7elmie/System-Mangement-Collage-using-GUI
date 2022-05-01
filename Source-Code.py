@@ -10,18 +10,22 @@ STUDENT_NAME = "student_name"
 STUDENT_COLLEGE = "student_college"
 STUDENT_ADDRESS = "student_address"
 STUDENT_PHONE = "student_phone"
+
 connection.execute(" CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ( " + STUDENT_ID +
                    " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                    STUDENT_NAME + " TEXT, " + STUDENT_COLLEGE + " TEXT, " +
                    STUDENT_ADDRESS + " TEXT, " + STUDENT_PHONE + " INTEGER);")
+
 appLabel = tk.Label(root, text="Student Management System", fg="#06a099", width=35)
 appLabel.config(font=("Sylfaen", 30))
 appLabel.grid(row=0, columnspan=2, padx=(10,10), pady=(30, 0))
+
 class Student:
     studentName = ""
     collegeName = ""
     phoneNumber = 0
     address = ""
+    
     def _init_(self, studentName, collegeName, phoneNumber, address):
         self.studentName = studentName
         self.collegeName = collegeName
@@ -39,6 +43,7 @@ nameEntry.grid(row=1, column=1, padx=(0,10), pady=(30, 20))
 collegeEntry.grid(row=2, column=1, padx=(0,10), pady = 20)
 phoneEntry.grid(row=3, column=1, padx=(0,10), pady = 20)
 addressEntry.grid(row=4, column=1, padx=(0,10), pady = 20)
+
 def takeNameInput():
     global nameEntry, collegeEntry, phoneEntry, addressEntry
     global list
@@ -58,6 +63,7 @@ def takeNameInput():
                        address + "', " + str(phone) + " ); ")
     connection.commit()
     messagebox.showinfo("Success", "Data Saved Successfully.")
+    
 def destroyRootWindow():
     root.destroy()
     secondWindow = tk.Tk()
@@ -73,13 +79,16 @@ def destroyRootWindow():
     tree.heading("four", text="Phone Number")
     cursor = connection.execute("SELECT * FROM " + TABLE_NAME + " ;")
     i = 0
+    
     for row in cursor:
         tree.insert('', i, text="Student " + str(row[0]),values=(row[1], row[2], row[3], row[4]))
         i = i + 1
     tree.pack()
     secondWindow.mainloop()
+    
 button = tk.Button(root, text="Take input", command=lambda :takeNameInput())
 button.grid(row=5, column=0, pady=30)
 displayButton = tk.Button(root, text="Display result", command=lambda :destroyRootWindow())
 displayButton.grid(row=5, column=1)
+
 root.mainloop()
