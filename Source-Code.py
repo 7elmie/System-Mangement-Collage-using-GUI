@@ -1,10 +1,14 @@
 import tkinter as tk
 from tkinter import ttk, messagebox
 import sqlite3
+
 root = tk.Tk()
+
 root.title("Management")
+
 connection = sqlite3.connect('management.db')
 TABLE_NAME = "management_table"
+
 STUDENT_ID = "student_id"
 STUDENT_NAME = "student_name"
 STUDENT_COLLEGE = "student_college"
