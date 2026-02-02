@@ -9,11 +9,5 @@
 [![Discord](https://img.shields.io/badge/Discord-7289DA?style=for-the-badge&logo=discord&logoColor=white)](https://discord.com/users/3993)
 </div>
 
-Developer: <b>7elmie</b> <br>
-Email: w.wasd84@yahoo.com<br>
-LinkedIn: https://www.linkedin.com/in/mohamed-hellmy-2b56ab198/<br>
-Facebook: https://www.facebook.com/HelmyBeh<br>
-Phone: +201096781022 <br>
-
 # System-Mangement-Collage-using-GUI
 A system that records university data for the first time and then takes it into the databases so that when calling on the system with the password and name, the university student’s data appears, such as: University ID The name mobile number Title e-mail, etc
